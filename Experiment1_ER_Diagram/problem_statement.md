@@ -23,30 +23,49 @@ FlexiFit Gym wants a database to manage its members, trainers, and fitness progr
 
 ### ER Diagram:
 *Paste or attach your diagram here*  
-![ER Diagram](er_diagram_fitness.png)
+<img width="797" height="800" alt="Screenshot 2025-09-27 082212" src="https://github.com/user-attachments/assets/7e02e807-2e73-47a4-8275-23dd69a6a80c" />
+
 
 ### Entities and Attributes
 
-| Entity | Attributes (PK, FK) | Notes |
-|--------|--------------------|-------|
-|        |                    |       |
-|        |                    |       |
-|        |                    |       |
-|        |                    |       |
-|        |                    |       |
+| Entity     |                   Attributes (PK, FK)                                   |              Notes                 |
+|------------|-------------------------------------------------------------------------|------------------------------------|
+| Client     |  client_ID (PK), fname, lname, gender, age, contact_add, email, password|Holds details of gym members.       |
+|            |                                                                         |                                    |
+| Membership |  mem_ID (PK), client_ID (FK), status, date                              |Membership details linked to client |
+|            |                                                                         |                                    |
+| Payment    | payment_ID (PK), client_ID (FK), date, amoun                            |Payments made by clients            |
+|            |                                                                         |                                    |
+| Schedule   | sched_ID (PK), client_ID (FK), trainor_ID (FK), session                 |Workout schedules assigned to client|
+|            |                                                                         |                                    |
+|Trainor     |trainor_ID (PK), name, sched_ID (FK), salary, email, password            |Trainers responsible for clients    |
+|            |                                                                         |                                    |
+|            |                                                                         |                                    |
+
 
 ### Relationships and Constraints
 
-| Relationship | Cardinality | Participation | Notes |
-|--------------|------------|---------------|-------|
-|              |            |               |       |
-|              |            |               |       |
-|              |            |               |       |
+| **Relationship**              | **Cardinality** | **Participation**                             | **Notes**                                         |
+| ----------------------------- | --------------- | --------------------------------------------- | ------------------------------------------------- |
+| Client → Membership           | 1 : N           | Total (every membership belongs to a client)  | A client can have multiple memberships over time. |
+| Client → Payment              | 1 : N           | Partial (not all clients may pay immediately) | A client can make many payments.                  |
+| Client → Schedule             | 1 : N           | Partial                                       | A client can have many schedules assigned.        |
+| Trainor → Schedule            | 1 : N           | Partial                                       | A trainer can manage multiple schedules.          |
+| Client → Transaction Records  | 1 : N           | Partial                                       | A client can have multiple transactions.          |
+| Transaction Records → Reports | 1 : N           | Total                                         | A report is always generated from transactions.   |
+| Client → Reports              | 1 : N           | Partial                                       | Reports are client-specific.                      |
+| Schedule → Trainor            | N : 1           | Partial                                       | Each schedule is linked to one trainer.           |
+
+
 
 ### Assumptions
-- 
-- 
-- 
+Client is the central entity.
+
+Membership, Payment, Schedule, Transaction Records, Reports all depend on Client.
+
+Trainor connects with Schedule.
+
+Reports depend on Transaction Records + Client.
 
 ---
 
