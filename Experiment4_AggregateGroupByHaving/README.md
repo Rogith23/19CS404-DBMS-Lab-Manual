@@ -333,7 +333,7 @@ select (age/5) * 5 as age_group,sum(salary) as 'SUM(salary)' from customer1 grou
 <img width="750" height="400" alt="Screenshot 2025-10-25 084119" src="https://github.com/user-attachments/assets/2d3c8f9d-9c09-43a3-8486-79d4bd563440" />
 
 
-##COMPLETION STATUS
+## COMPLETION STATUS
 
 <img width="1417" height="149" alt="Screenshot 2025-10-25 084513" src="https://github.com/user-attachments/assets/bdb9f2c8-be78-4429-8be9-30e1913efed4" />
 
