@@ -187,7 +187,7 @@ from products;
 <img width="1239" height="405" alt="image" src="https://github.com/user-attachments/assets/fb060bff-6d16-4464-b954-c0a0f62ceb40" />
 
 **COMPLETION STATUS**
-<img width="1407" height="267" alt="image" src="https://github.com/user-attachments/assets/57175614-524e-4213-b3db-1ae60639e74e" />
+<img width="1451" height="200" alt="Screenshot 2025-10-25 082217" src="https://github.com/user-attachments/assets/181f94a6-893f-4388-ad58-85be02c33d86" />
 
 
 ## RESULT
